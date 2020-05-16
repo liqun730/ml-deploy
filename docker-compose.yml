@@ -1,0 +1,11 @@
+version: '3'
+services: 
+    dog_vs_cat:
+        build: .
+        ports:
+            - 8080:8080
+        volumes: 
+            - .:/home/project/ml-classifiler
+        working_dir: /home/project/ml-classifiler
+        command: uvicorn app.main:app --host 0.0.0.0 --port 8080
+        

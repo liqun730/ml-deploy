@@ -21,3 +21,4 @@ class Classifier():
         label = 'cat' if (ix == 0) else 'dog'
         conf = (float)(pred[ix])
         return {"label": label, "confidence": conf}
+        
