@@ -11,14 +11,3 @@ app = FastAPI()
 def predict(image: UploadFile = File(...)):
     # predict label
     return model.predict_from_file(image.file)
-
-@app.get("/")
-async def main():
-    content = """
-        <body>
-        <form action="/file/" enctype="multipart/form-data" method="post">
-        <input name="file" type="file" multiple>
-        <input type="submit">
-        </body>
-    """
-    return HTMLResponse(content=content)
